@@ -18,6 +18,7 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - setuptools_scm
   run:
     - python >=3.6
     - numpy
@@ -32,7 +33,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: Reference ellipsoids for geodesy, geophysics, and coordinate calculations
+  summary: Reference ellipsoids for geodesy and geophysics
   description: |
     Boule is Python library for representing Reference Ellipsoids, calculating
     their gravity fields, and converting coordinates defined on the ellipsoids.
