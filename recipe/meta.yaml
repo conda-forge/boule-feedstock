@@ -1,5 +1,5 @@
 {% set name = "boule" %}
-{% set version = "0.4.1" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4464736291db3428112d4a11a0cc59433972b5f8efa08658a1c006ea62f2429f
+  sha256: fde5908b8a88f0f05ccbf23f2aa422b9d81a2a3e6ed6c1ce65afda0bb6254717
 
 build:
   noarch: python
@@ -16,13 +16,15 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - pip
-    - setuptools_scm
+    - setuptools >=45
+    - setuptools_scm >=6.2
   run:
-    - python >=3.7
+    - python >=3.8
     - numpy >=1.19
     - attrs >=19.3.0
+    - scipy >=1.8.0
 
 test:
   imports:
@@ -49,3 +51,4 @@ about:
 extra:
   recipe-maintainers:
     - leouieda
+    - santisoler
