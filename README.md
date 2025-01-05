@@ -158,4 +158,5 @@ Feedstock Maintainers
 =====================
 
 * [@leouieda](https://github.com/leouieda/)
+* [@santisoler](https://github.com/santisoler/)
 
