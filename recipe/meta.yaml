@@ -1,17 +1,17 @@
 {% set name = "boule" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fde5908b8a88f0f05ccbf23f2aa422b9d81a2a3e6ed6c1ce65afda0bb6254717
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ee74bec713b9694154aaffafc8ba99f448e6cd1bd59b73b9986804570c7fcad3
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
