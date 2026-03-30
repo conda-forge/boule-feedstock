@@ -1,32 +1,35 @@
 {% set name = "boule" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fde5908b8a88f0f05ccbf23f2aa422b9d81a2a3e6ed6c1ce65afda0bb6254717
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ee74bec713b9694154aaffafc8ba99f448e6cd1bd59b73b9986804570c7fcad3
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
-    - setuptools >=45
-    - setuptools_scm >=6.2
+    - setuptools >=61
+    - setuptools_scm >=8.0.3
   run:
-    - python >=3.8
-    - numpy >=1.19
+    - python >={{ python_min }}
+    - numpy >=1.23
     - attrs >=19.3.0
     - scipy >=1.8.0
 
 test:
+  requires:
+    - python  {{ python_min }}
   imports:
     - boule
 
