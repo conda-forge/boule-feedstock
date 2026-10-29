@@ -1,14 +1,13 @@
 {% set name = "boule" %}
-{% set version = "0.6.0" %}
-{% set python_min = "3.10" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ee74bec713b9694154aaffafc8ba99f448e6cd1bd59b73b9986804570c7fcad3
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: f43f4f51e678a2be99794339ffaa9c83748c829f7ad92f4bf2f52e0b7fc3d87d
 
 build:
   noarch: python
@@ -24,7 +23,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - numpy >=1.23
-    - attrs >=19.3.0
+    - attrs >=21.3.0
     - scipy >=1.8.0
 
 test:
