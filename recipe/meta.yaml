@@ -24,7 +24,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - numpy >=1.23
-    - attrs >=19.3.0
+    - attrs >=21.3.0
     - scipy >=1.8.0
 
 test:
